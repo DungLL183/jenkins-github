@@ -1,20 +1,20 @@
 pipeline{
     agent any
-    tools{
-        maven 'maven'
-    }
+    // tools{
+    //     maven 'maven'
+    // }
     stages{
-        stage("Build"){
-            steps{
-                sh 'mvn clean package'
-            }
-            post{
-                success{
-                    echo "Archiving the artifacts"
-                    archivArtifacts artifacts: '**/target/*.war'
-                }
-            }
-        }
+        // stage("Build"){
+        //     steps{
+        //         sh 'mvn clean package'
+        //     }
+        //     post{
+        //         success{
+        //             echo "Archiving the artifacts"
+        //             archivArtifacts artifacts: '**/target/*.war'
+        //         }
+        //     }
+        // }
         stage("clone"){
             steps{
                 git 'https://github.com/DungLL183/jenkins-github.git'
